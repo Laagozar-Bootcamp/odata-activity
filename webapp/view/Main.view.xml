@@ -8,25 +8,25 @@
                  sorter: { path: 'ProductName'} }">
         <headerToolbar>
             <OverflowToolbar id="hdrToolbar">
-                <Title id="hdrIdProd" text="Products"></Title>
+                <Title id="hdrIdProd" text="{i18n>prodsTitle}"></Title>
             </OverflowToolbar>
         </headerToolbar>
         <infoToolbar>
             <OverflowToolbar id="infoToolbar">
-                <Label id="infoTbLbl" text="Wide range of available products"/>
+                <Label id="infoTbLbl" text="{i18n>infoText}"/>
             </OverflowToolbar>
         </infoToolbar>
         <columns>
             <Column id="idColProd">
-            <Text id="idTxtProd" text="Product"/>
+            <Text id="idTxtProd" text="{i18n>prodCol}"/>
             </Column>
 
             <Column id="idColSupp">
-            <Text id="idTxtSupp" text="Supplier ID"/>
+            <Text id="idTxtSupp" text="{i18n>suppCol}"/>
             </Column>
 
             <Column id="idColPrice">
-            <Text id="idTxtPrice" text="Price"/>
+            <Text id="idTxtPrice" text="{i18n>priceCol}"/>
             </Column>
         </columns>
         <items>
@@ -35,7 +35,7 @@
                 <ObjectIdentifier 
                     id="objProdName"
                     title="{ProductName}"
-                    text="Product ID: {ProductID}"/>
+                    text="{i18n>prodIdTxt} {ProductID}"/>
 
                 <Text id="txtSupp" text="{SupplierID}"/>
                 <!--just for visualization, add Discontinued property
