@@ -1,0 +1,56 @@
+<mvc:View controllerName="sapips.training.odata.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core = "sap.ui.core"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+    <Table id="tabProducts" inset="false" 
+        items="{ path: '/Products',
+                 sorter: { path: 'ProductName'} }">
+        <headerToolbar>
+            <OverflowToolbar id="hdrToolbar">
+                <Title id="hdrIdProd" text="Products"></Title>
+            </OverflowToolbar>
+        </headerToolbar>
+        <infoToolbar>
+            <OverflowToolbar id="infoToolbar">
+                <Label id="infoTbLbl" text="Wide range of available products"/>
+            </OverflowToolbar>
+        </infoToolbar>
+        <columns>
+            <Column id="idColProd">
+            <Text id="idTxtProd" text="Product"/>
+            </Column>
+
+            <Column id="idColSupp">
+            <Text id="idTxtSupp" text="Supplier ID"/>
+            </Column>
+
+            <Column id="idColPrice">
+            <Text id="idTxtPrice" text="Price"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem id="colListProd" vAlign="Middle">
+            <cells>
+                <ObjectIdentifier 
+                    id="objProdName"
+                    title="{ProductName}"
+                    text="Product ID: {ProductID}"/>
+
+                <Text id="txtSupp" text="{SupplierID}"/>
+                <!--just for visualization, add Discontinued property
+                <ObjectIdentifier 
+                    id="objSupplier"
+                    title="{SupplierID}"
+                    text="Discontinued: {Discontinued}"/>-->
+
+                <ObjectIdentifier 
+                    id="objUnitPrice" 
+                    title="{UnitPrice}"
+                    text="{QuantityPerUnit}"/>
+            </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+    </Page>
+</mvc:View>
